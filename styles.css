@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura total da viewport */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #42d397e7, #12a8b3), url(background-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+.podcast-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.podcast-cover {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.podcast-image {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.play-button {
+  position: absolute;
+  bottom: 10px; /* Ajuste fino para alinhar dentro da imagem */
+  right: 10px; /* Ajuste fino para alinhar dentro da imagem */
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.play-button::before {
+  content: '▶'; /* Símbolo de play */
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.play-button.playing::before {
+  content: '❚❚'; /* Símbolo de pausa */
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+span {
+  color: #ffffffe7;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h2  {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.content {
+  text-align: justify;
+
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hosts img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.episode-title {
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+
+.episode-name {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.episode-description {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: 100%;
+  }
+  .podcast-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hosts {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hosts img {
+    margin: 5px;
+  }
+}
